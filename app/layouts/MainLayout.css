@@ -1,0 +1,1284 @@
+/* ========== PAGE ========== */
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2rem;
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  background: #f5f0eb;
+  margin: 0 auto;
+}
+
+/* ========== BACKGROUND LOGO ========== */
+.bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  opacity: 0.06;
+  pointer-events: none;
+  animation: floatLogo 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+.page > *:not(.bg-logo) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== LOGO AREA ========== */
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  animation: fadeDown 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.logo-area img.logo {
+  width: 64px;
+  height: auto;
+}
+
+.logo-area h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7B1D5A;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.logo-area p {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+}
+
+/* ========== PROGRESS LABEL ========== */
+.progress-label {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 0.35rem;
+  animation: fadeUp 0.4s ease 0.15s both;
+}
+
+/* ========== STEPPER ========== */
+.stepper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.4s ease 0.2s both;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  border: 2px solid #D3D1C7;
+  background: #fff;
+  color: #999;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.step-circle.active {
+  background: #7B1D5A;
+  border-color: #7B1D5A;
+  color: #fff;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.step-circle.done {
+  background: #EAF3DE;
+  border-color: #639922;
+  color: #3B6D11;
+}
+
+.step-circle.done svg {
+  width: 14px;
+  height: 14px;
+  stroke: #3B6D11;
+  stroke-width: 2.5;
+}
+
+.step-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bbb;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.step-label.active {
+  color: #7B1D5A;
+}
+
+.step-label.done {
+  color: #3B6D11;
+}
+
+.step-conn {
+  flex: 1;
+  height: 2px;
+  background: #D3D1C7;
+  margin: 0 4px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.step-conn-fill {
+  height: 100%;
+  background: #639922;
+  width: 0;
+  transition: width 0.55s ease 0.1s;
+  border-radius: 2px;
+}
+
+/* ========== CARD ========== */
+.card {
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease 0.25s both;
+}
+
+/* ========== CARD HEAD ========== */
+.card-head {
+  background: #7B1D5A;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-head-bg {
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.card-head .icon {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  flex-shrink: 0;
+}
+
+.card-head-text h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.card-head-text p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 1px;
+}
+
+/* ========== PANEL ========== */
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel.er {
+  animation: slideInRight 0.3s ease both;
+}
+
+.panel.el {
+  animation: slideInLeft 0.3s ease both;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+/* ========== RADIO GROUP ========== */
+.rgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rcard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1.5px solid #e8e5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.rcard:hover {
+  border-color: #7B1D5A;
+  background: #fdf5fb;
+}
+
+.rcard .icon {
+  font-size: 18px;
+  color: #7B1D5A;
+  flex-shrink: 0;
+}
+
+.rcard span {
+  font-size: 14px;
+  color: #1a1a2e;
+  flex: 1;
+}
+
+.rdot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #B4B2A9;
+  flex-shrink: 0;
+  transition: all 0.25s;
+}
+
+.rcard.sel {
+  border-color: #7B1D5A;
+  background: #fdf5fb;
+}
+
+.rcard.sel .rdot {
+  background: #7B1D5A;
+  border-color: #7B1D5A;
+  box-shadow: inset 0 0 0 3px #fff;
+  animation: popIn 0.25s ease;
+}
+
+/* ========== CARD FOOT ========== */
+.card-foot {
+  display: flex;
+  gap: 8px;
+  padding: 0.875rem 1.25rem 1rem;
+  border-top: 0.5px solid #e8e5e0;
+}
+
+.btn-next {
+  flex: 1;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  background: #7B1D5A;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.btn-next:hover {
+  background: #5e1644;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(123, 29, 90, 0.25);
+}
+
+.btn-next:active {
+  transform: scale(0.97);
+}
+
+.btn-back {
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e8e5e0;
+  background: #fff;
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.btn-back:hover {
+  background: #f8f5f2;
+  border-color: #ddd;
+}
+
+.btn-back:active {
+  transform: scale(0.97);
+}
+
+.btn-green {
+  background: #1d9e75;
+}
+
+.btn-green:hover {
+  background: #147a5b;
+  box-shadow: 0 4px 16px rgba(29, 158, 117, 0.25);
+}
+
+/* ========== SUCCESS CARD ========== */
+.success-card {
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: none;
+  text-align: center;
+  animation: successScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-card-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.success-card > *:not(.success-card-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.success-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #EAF3DE;
+  border: 2px solid #639922;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+.success-ring svg {
+  width: 32px;
+  height: 32px;
+  stroke: #3B6D11;
+  stroke-width: 2.5;
+}
+
+.success-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.success-card p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.success-logo {
+  width: 48px;
+  margin: 1rem auto 0;
+  display: block;
+}
+
+.contact-pill {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fdf5fb;
+  border: 0.5px solid #D4537E;
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #72243E;
+}
+
+.contact-pill svg {
+  width: 14px;
+  height: 14px;
+  stroke: #7B1D5A;
+  stroke-width: 2;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  .page {
+    padding: 1rem 0.75rem 1.5rem;
+    min-height: 480px;
+    max-width: 100%;
+  }
+
+  .bg-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-area img.logo {
+    width: 50px;
+  }
+
+  .logo-area h1 {
+    font-size: 12px;
+  }
+
+  .logo-area p {
+    font-size: 10px;
+  }
+
+  .stepper {
+    max-width: 100%;
+  }
+
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .step-label {
+    font-size: 8px;
+  }
+
+  .step-conn {
+    margin-bottom: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-head {
+    padding: 0.6rem 1rem;
+  }
+
+  .card-head-text h2 {
+    font-size: 13px;
+  }
+
+  .card-head-text p {
+    font-size: 10px;
+  }
+
+  .card-foot {
+    padding: 0.75rem 1rem;
+  }
+
+  .rcard {
+    padding: 10px 12px;
+  }
+
+  .rcard span {
+    font-size: 13px;
+  }
+
+  .btn-next {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  .btn-back {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .success-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .success-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .success-ring svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .success-card h3 {
+    font-size: 16px;
+  }
+
+  .success-card p {
+    font-size: 13px;
+  }
+
+  .success-logo {
+    width: 40px;
+  }
+
+  .contact-pill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}
+/* ========== PAGE ========== */
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2rem;
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  background: #f5f0eb;
+  margin: 0 auto;
+}
+
+/* ========== BACKGROUND LOGO ========== */
+.bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  opacity: 0.06;
+  pointer-events: none;
+  animation: floatLogo 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* ========== DECORATIVE ELEMENTS ========== */
+.deco-dots {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-image: radial-gradient(#7B1D5A 2px, transparent 2px);
+  background-size: 12px 12px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.deco-dots-left {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-image: radial-gradient(#7B1D5A 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(123, 29, 90, 0.06);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.deco-circle-1 {
+  width: 120px;
+  height: 120px;
+  top: -40px;
+  right: -30px;
+}
+
+.deco-circle-2 {
+  width: 80px;
+  height: 80px;
+  bottom: -20px;
+  left: -20px;
+}
+
+.page > *:not(.bg-logo):not(.deco-dots):not(.deco-dots-left):not(.deco-circle) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== LOGO AREA ========== */
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  animation: fadeDown 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.logo-area img.logo {
+  width: 64px;
+  height: auto;
+  animation: floatElement 3s ease-in-out infinite;
+}
+
+.logo-area h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7B1D5A;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.logo-area p {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+}
+
+/* ========== PROGRESS LABEL ========== */
+.progress-label {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 0.35rem;
+  animation: fadeUp 0.4s ease 0.15s both;
+}
+
+/* ========== STEPPER ========== */
+.stepper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.4s ease 0.2s both;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  border: 2px solid #D3D1C7;
+  background: #fff;
+  color: #999;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.step-circle.active {
+  background: #7B1D5A;
+  border-color: #7B1D5A;
+  color: #fff;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  box-shadow: 0 4px 16px rgba(123, 29, 90, 0.3);
+}
+
+.step-circle.done {
+  background: #EAF3DE;
+  border-color: #639922;
+  color: #3B6D11;
+}
+
+.step-circle.done svg {
+  width: 14px;
+  height: 14px;
+  stroke: #3B6D11;
+  stroke-width: 2.5;
+}
+
+.step-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bbb;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.step-label.active {
+  color: #7B1D5A;
+}
+
+.step-label.done {
+  color: #3B6D11;
+}
+
+.step-conn {
+  flex: 1;
+  height: 2px;
+  background: #D3D1C7;
+  margin: 0 4px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.step-conn-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #639922, #7CC44A);
+  width: 0;
+  transition: width 0.55s ease 0.1s;
+  border-radius: 2px;
+}
+
+/* ========== CARD ========== */
+.card {
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease 0.25s both;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* ========== CARD HEAD ========== */
+.card-head {
+  background: linear-gradient(135deg, #7B1D5A 0%, #5e1644 100%);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-head-bg {
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  opacity: 0.12;
+  pointer-events: none;
+  animation: floatElement 4s ease-in-out infinite;
+}
+
+.card-head .icon {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.card-head-text h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.card-head-text p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 1px;
+}
+
+/* ========== PANEL ========== */
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel.er {
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.panel.el {
+  animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+/* ========== RADIO GROUP ========== */
+.rgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rcard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1.5px solid #e8e5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.rcard:hover {
+  border-color: #7B1D5A;
+  background: #fdf5fb;
+  transform: translateX(4px);
+}
+
+.rcard .icon {
+  font-size: 18px;
+  color: #7B1D5A;
+  flex-shrink: 0;
+}
+
+.rcard span {
+  font-size: 14px;
+  color: #1a1a2e;
+  flex: 1;
+}
+
+.rcard .rdot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #B4B2A9;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.rcard.sel {
+  border-color: #7B1D5A;
+  background: #fdf5fb;
+  transform: translateX(4px);
+}
+
+.rcard.sel .rdot {
+  background: #7B1D5A;
+  border-color: #7B1D5A;
+  box-shadow: inset 0 0 0 3px #fff;
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ========== ILLUSTRATION STEP ========== */
+.step-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0 0.75rem;
+}
+
+.step-illustration .illu-icon {
+  font-size: 48px;
+  animation: floatElement 3s ease-in-out infinite;
+}
+
+.step-illustration .illu-icon.delay-2 {
+  animation-delay: 0.5s;
+}
+
+.step-illustration .illu-icon.delay-3 {
+  animation-delay: 1s;
+}
+
+.step-illustration .illu-icon.delay-4 {
+  animation-delay: 1.5s;
+}
+
+/* ========== ILLUSTRATION WITH TEXT ========== */
+.illu-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.illu-row .illu-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  animation: floatElement 3s ease-in-out infinite;
+}
+
+.illu-row .illu-text {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* ========== CARD FOOT ========== */
+.card-foot {
+  display: flex;
+  gap: 8px;
+  padding: 0.875rem 1.25rem 1rem;
+  border-top: 0.5px solid #e8e5e0;
+}
+
+.btn-next {
+  flex: 1;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #7B1D5A 0%, #5e1644 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(123, 29, 90, 0.3);
+}
+
+.btn-next:active {
+  transform: scale(0.97);
+}
+
+.btn-back {
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e8e5e0;
+  background: #fff;
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.btn-back:hover {
+  background: #f8f5f2;
+  border-color: #ddd;
+  transform: translateX(-2px);
+}
+
+.btn-back:active {
+  transform: scale(0.97);
+}
+
+.btn-green {
+  background: linear-gradient(135deg, #1d9e75 0%, #147a5b 100%);
+}
+
+.btn-green:hover {
+  box-shadow: 0 6px 24px rgba(29, 158, 117, 0.3);
+}
+
+/* ========== SUCCESS CARD ========== */
+.success-card {
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  border: 0.5px solid #e0ddd8;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: none;
+  text-align: center;
+  animation: successScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-card-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.success-card > *:not(.success-card-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.success-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #EAF3DE;
+  border: 2px solid #639922;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+.success-ring svg {
+  width: 32px;
+  height: 32px;
+  stroke: #3B6D11;
+  stroke-width: 2.5;
+}
+
+.success-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.success-card p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.success-logo {
+  width: 48px;
+  margin: 1rem auto 0;
+  display: block;
+  animation: floatElement 3s ease-in-out infinite;
+}
+
+.contact-pill {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fdf5fb;
+  border: 0.5px solid #D4537E;
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #72243E;
+}
+
+.contact-pill svg {
+  width: 14px;
+  height: 14px;
+  stroke: #7B1D5A;
+  stroke-width: 2;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  .page {
+    padding: 1rem 0.75rem 1.5rem;
+    min-height: 480px;
+    max-width: 100%;
+  }
+
+  .bg-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-area img.logo {
+    width: 50px;
+  }
+
+  .logo-area h1 {
+    font-size: 12px;
+  }
+
+  .logo-area p {
+    font-size: 10px;
+  }
+
+  .stepper {
+    max-width: 100%;
+  }
+
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .step-label {
+    font-size: 8px;
+  }
+
+  .step-conn {
+    margin-bottom: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-head {
+    padding: 0.6rem 1rem;
+  }
+
+  .card-head-text h2 {
+    font-size: 13px;
+  }
+
+  .card-head-text p {
+    font-size: 10px;
+  }
+
+  .card-foot {
+    padding: 0.75rem 1rem;
+  }
+
+  .rcard {
+    padding: 10px 12px;
+  }
+
+  .rcard span {
+    font-size: 13px;
+  }
+
+  .btn-next {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  .btn-back {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .step-illustration .illu-icon {
+    font-size: 36px;
+  }
+
+  .success-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .success-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .success-ring svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .success-card h3 {
+    font-size: 16px;
+  }
+
+  .success-card p {
+    font-size: 13px;
+  }
+
+  .success-logo {
+    width: 40px;
+  }
+
+  .contact-pill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .deco-dots,
+  .deco-dots-left,
+  .deco-circle {
+    display: none;
+  }
+}

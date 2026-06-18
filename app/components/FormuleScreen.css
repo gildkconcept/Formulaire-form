@@ -1,0 +1,104 @@
+.cdg-tier-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cdg-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  user-select: none;
+}
+
+.cdg-tier .tier-icon {
+  font-size: 22px;
+}
+
+.cdg-tier .tier-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cdg-tier .tier-amount {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+/* Tier Colors */
+.cdg-tier-diamant {
+  background: #e8f4fd;
+  border-color: #378ADD;
+}
+.cdg-tier-diamant .tier-label { color: #0C447C; }
+.cdg-tier-diamant .tier-amount { color: #185FA5; }
+
+.cdg-tier-or {
+  background: #faeeda;
+  border-color: #EF9F27;
+}
+.cdg-tier-or .tier-label { color: #633806; }
+.cdg-tier-or .tier-amount { color: #854F0B; }
+
+.cdg-tier-argent {
+  background: #f1efe8;
+  border-color: #B4B2A9;
+}
+.cdg-tier-argent .tier-label { color: #2C2C2A; }
+.cdg-tier-argent .tier-amount { color: #5F5E5A; }
+
+.cdg-tier-bronze {
+  background: #faece7;
+  border-color: #D85A30;
+}
+.cdg-tier-bronze .tier-label { color: #4A1B0C; }
+.cdg-tier-bronze .tier-amount { color: #993C1D; }
+
+.cdg-tier.selected-tier {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.cdg-tier.selected-tier::after {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #C41E3A;
+}
+
+.cdg-tier input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cdg-tier-note {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+  line-height: 1.5;
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+  .cdg-tier-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .cdg-tier-group {
+    grid-template-columns: 1fr;
+  }
+}

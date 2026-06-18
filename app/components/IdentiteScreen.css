@@ -1,0 +1,68 @@
+.cdg-field-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cdg-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cdg-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cdg-field input,
+.cdg-field select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 0.5px solid #ddd;
+  font-size: 14px;
+  background: #fff;
+  color: #1a1a1a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.cdg-field input:focus,
+.cdg-field select:focus {
+  outline: none;
+  border-color: #C41E3A;
+  box-shadow: 0 0 0 3px rgba(196,30,58,0.1);
+}
+
+.cdg-field input.error,
+.cdg-field select.error {
+  border-color: #C41E3A;
+  box-shadow: 0 0 0 3px rgba(196,30,58,0.15);
+}
+
+.cdg-field .err-msg {
+  font-size: 11px;
+  color: #C41E3A;
+  margin-top: 3px;
+  display: none;
+}
+
+.cdg-field.has-error .err-msg {
+  display: block;
+}
+.cdg-field.has-error input,
+.cdg-field.has-error select {
+  border-color: #C41E3A;
+}
+
+@media (max-width: 600px) {
+  .cdg-two-col {
+    grid-template-columns: 1fr;
+  }
+}

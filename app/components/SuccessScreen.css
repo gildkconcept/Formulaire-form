@@ -1,0 +1,43 @@
+.cdg-success-wrap {
+  text-align: center;
+  padding: 2.5rem 1.75rem;
+}
+
+.cdg-success-icon {
+  width: 64px;
+  height: 64px;
+  background: #EAF3DE;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 32px;
+  color: #3B6D11;
+}
+
+.cdg-success-wrap h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.cdg-success-wrap p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.cdg-ref {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #fff5f5;
+  border: 0.5px solid #C41E3A;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #C41E3A;
+  letter-spacing: 0.05em;
+}

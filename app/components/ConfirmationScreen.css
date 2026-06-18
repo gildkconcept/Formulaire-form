@@ -1,0 +1,14 @@
+.cdg-btn-success {
+  background: #27ae60;
+  color: #fff;
+  flex: 1;
+}
+
+.cdg-btn-success:hover {
+  background: #219a52;
+}
+
+.cdg-btn-success:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
